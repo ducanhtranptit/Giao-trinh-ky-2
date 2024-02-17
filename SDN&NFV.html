@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài giảng SDN & NFV</title>
+		<style>
+			#imageContainer {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+
+			img {
+				margin: 5px;
+				width: 1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="imageContainer"></div>
+
+		<script>
+			function loadAndDisplayImages() {
+				var imageContainer = document.getElementById("imageContainer");
+
+				for (var page = 1; page <= 124; page++) {
+					var imageUrl =
+						"http://dlib.ptit.edu.vn/flowpaper/services/view.php?doc=59577941782879020442336580668280359340&format=jpg&page=" +
+						page +
+						"&subfolder=59/57/79/";
+
+					var imageElement = document.createElement("img");
+					imageElement.src = imageUrl;
+					imageElement.alt = "Page " + page;
+
+					imageContainer.appendChild(imageElement);
+				}
+			}
+			window.onload = loadAndDisplayImages;
+		</script>
+	</body>
+</html>

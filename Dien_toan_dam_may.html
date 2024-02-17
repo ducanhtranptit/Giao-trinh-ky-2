@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài giảng điện toán đám mây</title>
+		<style>
+			#imageContainer {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+
+			img {
+				margin: 5px;
+				width: 1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="imageContainer"></div>
+
+		<script>
+			function loadAndDisplayImages() {
+				var imageContainer = document.getElementById("imageContainer");
+
+				for (var page = 1; page <= 124; page++) {
+					var imageUrl =
+						"http://dlib.ptit.edu.vn/flowpaper/services/view.php?doc=51477349272082532293936136505641618987&format=jpg&page=" +
+						page +
+						"&subfolder=51/47/73/";
+
+					var imageElement = document.createElement("img");
+					imageElement.src = imageUrl;
+					imageElement.alt = "Page " + page;
+
+					imageContainer.appendChild(imageElement);
+				}
+			}
+			window.onload = loadAndDisplayImages;
+		</script>
+	</body>
+</html>

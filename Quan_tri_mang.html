@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài giảng quản trị mạng</title>
+		<style>
+			#imageContainer {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+
+			img {
+				margin: 5px;
+				width: 1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="imageContainer"></div>
+
+		<script>
+			function loadAndDisplayImages() {
+				var imageContainer = document.getElementById("imageContainer");
+				for (var page = 1; page <= 131; page++) {
+					var imageUrl =
+						"http://dlib.ptit.edu.vn/flowpaper/services/view.php?doc=28472697704157933041259759687905825357&format=jpg&page=" +
+						page +
+						"&subfolder=28/47/26/";
+					var imageElement = document.createElement("img");
+					imageElement.src = imageUrl;
+					imageElement.alt = "Page " + page;
+					imageContainer.appendChild(imageElement);
+				}
+			}
+			window.onload = loadAndDisplayImages;
+		</script>
+	</body>
+</html>
